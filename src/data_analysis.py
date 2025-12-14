@@ -83,7 +83,7 @@ def barplot_rentability():
 
 # Unprofitable transactions
 df4=pd.read_sql_query(sql=unprofitable_transactions, con=engine)
-print(df4)
+sales_by_year()
 
 # Top-10 products by sum of 'sales' and 'quantity'
 # Visualisation of profit/sales by State/Region
