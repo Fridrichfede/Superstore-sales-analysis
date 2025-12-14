@@ -64,6 +64,20 @@ LEFT JOIN superstore_sales.deal_info AS d_i ON p_i.product_id = d_i.product_id;'
 unprofitable_transactions='''SELECT order_id, customer_id, product_id, profit
 FROM superstore_sales.deal_info
 WHERE profit<0;'''
-top_10_products=6
-visualisation=7
-discount_impact_on_profit=8
+visualisation_of_sales_and_profit_by_region = '''
+SELECT region, SUM(sales) AS sum_of_sales, SUM(profit) AS sum_of_profit
+FROM superstore_sales.customer_info AS customer
+JOIN superstore_sales.deal_info AS deal ON customer.customer_id = deal.customer_id
+GROUP BY region;
+'''
+visualisation_of_sales_and_profit_by_state = '''
+SELECT state, SUM(sales) AS sum_of_sales, SUM(profit) AS sum_of_profit
+FROM superstore_sales.customer_info AS customer
+JOIN superstore_sales.deal_info AS deal ON customer.customer_id = deal.customer_id
+GROUP BY state;
+'''
+
+discount_impact_on_profit= '''
+SELECT discount, profit
+FROM superstore_sales.deal_info;
+'''
