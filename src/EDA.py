@@ -4,11 +4,12 @@ from matplotlib import pyplot as plt
 import matplotlib.ticker as ticker
 import seaborn as sns
 import pandas as pd
+
+
 engine = get_engine()
 
 
 # 1. Dynamics of sales and profit across the time
-
 
 df = pd.read_sql_query(sql=sql_queries.dynamics_of_sales_and_profit, con=engine)
 df['year'] = pd.to_datetime(df['order_date']).dt.year
