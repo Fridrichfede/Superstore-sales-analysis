@@ -1,5 +1,7 @@
 sqlalchemy==2.0.43
+numpy==2.4.0
 matplotlib==3.10.6
 pandas==2.3.2
 seaborn==0.13.2
-jupyterlab==4.5.0
+jupyterlab==4.5.1
+notebook==7.5.1
