@@ -1,9 +1,5 @@
-Python = 3.14.0
-
-# Access to Database
-sqlalchemy = 2.0.43
-
-# Data manipulation & visualisation
-matplotlib = 3.10.6
-pandas = 2.3.3
-seaborn = 0.13.2
+sqlalchemy==2.0.43
+matplotlib==3.10.6
+pandas==2.3.2
+seaborn==0.13.2
+jupyterlab==4.5.0

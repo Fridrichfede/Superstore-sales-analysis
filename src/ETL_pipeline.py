@@ -6,7 +6,7 @@ from sql_queries import create_tables
 # 1.Connection to PostgreSQL DB
 db_connection = create_engine(db_connection_str)
 schema_name = 'superstore_sales'
-file_path = "C:\\Users\\Zhassuzak\\OneDrive\\Desktop\\Superstore_sales_analysis\\data\\raw\\Superstore_sales.csv"
+file_path = "C:\\Users\\Zhassuzak\\OneDrive\\Desktop\\Superstore_sales_analysis\\data\\Superstore_sales.csv"
 print('Programm connected to DB succesfully')
 
 
