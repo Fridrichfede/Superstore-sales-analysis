@@ -1,6 +1,6 @@
 # 📊 Superstore Sales Analysis
 
-![Project Status](https://img.shields.io/badge/status-complete-brightgreen)
+![Project Status](https://img.shields.io/badge/status-completed-brightgreen)
 ![License](https://img.shields.io/github/license/Fridrichfede/Superstore-sales-analysis)
 
 *Comprehensive data analysis of the Superstore sales dataset to drive actionable business insights.*
@@ -17,16 +17,15 @@ This repository includes data processing, visualizations, summary statistics, an
 
 ---
 
-## 📈 Key Insights & Features
+## 📈 Business problem
 
-🎯 **What you’ll discover:**
+🎯 **Business wants to understand:**
 
-- 🏷️ Top-selling *products*, *categories*, and *sub-categories*
-- 📍 Regional performance and *profit distribution*
-- 📆 Trends in *sales & profit over time*
-- 🛍️ Customer segment behavior and profitability
-- 📊 Correlation between *discounts* and *profitability*  
-(*Visualizations included in `/images/`*) :contentReference[oaicite:2]{index=2}
+- 🏷️ Sales of which a category/sub-category of items are most profitable and should be prioritized, sales of which category/sub-category of items are unprofitable
+- 📍 Regional performance by state and profit distribution, where they have to reduce expenditures for logistics, where marketing and PR department have to work more efficiently
+- 🛍️ Which customer segment broughts up the highest amount of money, which customer segment's keeping & attracting process have to be prioritized
+- 📊 Correlation between discounts and profitability, how discounts affect overall profitability  
+(Visualizations included in 'images/' folder)
 
 ---
 
@@ -34,7 +33,7 @@ This repository includes data processing, visualizations, summary statistics, an
 
 - **Python** — Core language  
 - **pandas & numpy** — Data cleaning & manipulation  
-- **Matplotlib, Seaborn, Plotly** — Visualizations  
+- **matplotlib, seaborn, plotly** — Visualizations  
 - **Jupyter Notebook** — Interactive analysis  
 - **PostgreSQL** — Main Database
 - **sqlalchemy, psycopg2** - Database connection & Structured queries
@@ -43,11 +42,12 @@ This repository includes data processing, visualizations, summary statistics, an
 
 ## 📂 Project Structure
 
-```
-SUPERSTORE_SALES_ANALYSIS
+```SUPERSTORE_SALES_ANALYSIS
 ├── data/                  # Superstore dataset 
-├── images.docx                # Charts & Plots
-├── src/  
+├── images/                # Visualizations
+|    ├── images_from_EDA.docx
+|    ├── images_from_RFM_analysis.pdf              
+├── src/                   # Source code
 |    ├──config.py (hidden)
 |    ├──EDA.py
 |    ├──ETL_pipeline.py
@@ -57,26 +57,26 @@ SUPERSTORE_SALES_ANALYSIS
 ├── README.md       # Project Documentation
 └── requirements.txt              # Dependencies
 
-````
+```
 
 ---
 
 ## 🚀 Quick Start
 
-**1. Clone the repository**
+### **1. Clone the repository**
 
 ```bash
 git clone https://github.com/Fridrichfede/Superstore-sales-analysis.git
 cd Superstore-sales-analysis
 ````
 
-**2. Install dependencies**
+### **2. Install dependencies**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-**3. Open the analysis notebook**
+### **3. Open the analysis notebook**
 
 ```bash
 jupyter notebook
@@ -84,16 +84,45 @@ jupyter notebook
 
 ---
 
-## 📊 Example Results
+## 📊 Example Results and Business Insights
 
-> *Include a few high-impact visuals here, like a sales trend chart or profit by region.*
+### **Sales Trend by State and Suggestions for Increase in Sales**
 
 ```markdown
-![Sales Trend](images/sales_trend.png)
-![Profit by Region](images/profit_by_region.png)
+![Sales Trend by State](images/sales_by_state.png)
 ```
 
-*Replace with your best visuals to instantly show the value.*
+As can be seen from the bar plot, sales are at a catastrophically low level in several states at once (Oklahoma, Nevada, South Dakota, the District of Columbia, Maryland, Kansas, and Arkansas). Taking into account both the low sales figures and the population sizes of these states, it would be most profitable for the business to improve the efficiency of marketing and targeting in states such as Oklahoma, Nevada, Maryland, Kansas, and Arkansas.
+
+In states such as South Dakota and the District of Columbia, however, it would be more reasonable to reduce logistics costs, since low sales in these cases are not caused by ineffective marketing or other controllable factors, but by the very small size of the markets, which are fundamentally unable to generate high revenue.
+
+Additionally, the business should work on improving advertising effectiveness and marketing strategies in highly populated states such as Florida, Ohio, Georgia, and Michigan, because although sales performance in these states is better than in the previously mentioned ones, it is still relatively low given the scale of these markets.
+
+ ---
+
+### **Which product subcategories generate the highest profit and sell well, and which ones are unprofitable**
+
+```markdown
+![Profitability by Subcategory](images/profit_by_sub_category.png)
+![Sales by Subcategory](images/sales_by_sub_category.png)
+```
+
+Based on the information provided by the bar plot, the business needs to increase prices for products in the *Tables*, *Binders*, and *Machines* subcategories, because despite strong sales volumes, these products have unprofitable margins. A higher price will likely cool demand for products in these subcategories, but it will help prevent even greater losses.
+
+Sales of products in the *Bookcases* and *Appliances* subcategories should be phased out, as even taking into account their negative profitability, they do not sell at an adequate level.
+
+It is also recommended to improve marketing efficiency or slightly reduce prices for products in the *Fasteners*, *Envelopes*, *Labels*, and *Art* subcategories. This will reduce their profitability but help improve the catastrophically low level of sales in these subcategories.
+
+ ---
+
+### **Which customer segment should the business prioritize most for acquisition and retention?**
+
+```markdown
+![Total sales by segment](images/Total sales by customer segment.png)
+![Median sales by segment](images/Median sales by customer segment.png)
+```
+
+From the bar plot above, it is clear that the largest inflow of revenue for the business is generated not by VIP customers, but by high-tier loyal customers and customers who are at risk of churn. Based on these findings, the business is advised to run targeted advertising campaigns and targeted promotions for customers who are at risk of leaving, as well as to ensure the loyalty of high-tier loyal customers and VIP customers (since the median customer in this segment spends the most, which means that the most valuable customers belong to this category) through similarly targeted promotions.
 
 ---
 
@@ -106,7 +135,7 @@ jupyter notebook
 3. **Visualization & Interpretation:**
    • Clear charts for each key business question
 4. **Business Recommendations:**
-   • Tactical suggestions based on insights ([akashbhargav12.github.io][2])
+   • Tactical suggestions based on insights
 
 ---
 
@@ -114,9 +143,9 @@ jupyter notebook
 
 Here are suggestions to expand this project:
 
-* 🚀 Build an interactive dashboard (e.g., with Streamlit)
-* 📊 Add predictive modeling (e.g., sales forecasting)
-* 📌 Deploy results with a web-based report
+1. 🚀 Build an interactive dashboard (e.g., with Streamlit)
+2. 📊 Add predictive modeling (e.g., sales forecasting)
+3. 📌 Deploy results with a web-based report
 
 ---
 
@@ -133,18 +162,10 @@ To contribute:
 
 ## 📬 Contact
 
-**Zhassuzak Mussa**
+### **Zhassuzak Mussa**
 
 🔗 LinkedIn: [https://www.linkedin.com/in/zhassuzak-mussa-27898633b/](https://www.linkedin.com/in/zhassuzak-mussa-27898633b/)
 
 📧 Email: [zhasuzakmusa@gmail.com](mailto:zhasuzakmusa@gmail.com)
 
 ---
-
-## 📜 License
-
-This project is open source and available under the **MIT License**.
-
----
-
-
